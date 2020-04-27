@@ -1,45 +1,59 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --main-dark-color: #343a40;
+    --main-light-color: rgb(248, 249, 250);
 }
 
-html {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-}
-
+/* Height is 100% of screen minus the nav */
 body {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    height: 100vh;
-    background-color: rgb(245, 245, 245);
-    overflow: hidden;
-}
+    background-color: var(--main-light-color);
+    color: var(--main-dark-color);
+    /* overflow: hidden; */
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+}   
 
-h1 {
-    margin-top: 5rem;
-    font-size: 5rem;
+main {
+    background-color: var(--main-light-color);
 }
 
 hr {
-    margin: 5rem auto;
-    width: 80%;
-    border: 1px solid gray;
+    border: 1px solid var(--main-dark-color);
 }
 
-p {
-    width: 60%;
-    margin: 0 auto;
-    margin-bottom: 2em;
-    font-size: 2rem;
-    color: rgb(83, 83, 83);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.emoji {
-    font-size: 3rem;
-    /* margin-top: 3rem; */
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.socials {
+    bottom: 30px;
+    left: 25%;
+}
+
+.second-title {
+    display: none;
+}
+
+@media (max-width: 775px) { 
+    .first-title {
+        display: none;
+    }
+
+    .second-title {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .socials {
+        bottom: 50px;
+    }
 }
